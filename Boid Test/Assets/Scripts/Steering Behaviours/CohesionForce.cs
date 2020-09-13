@@ -7,12 +7,6 @@ public class CohesionForce : SteeringBehaviour
     public float perceptionRadius;
     public float separationMaxSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public override Vector3 GetSteer(List<Boid> boids, List<GameObject> foods, Boid currentBoid)
     {
         Vector3 desiredVelocity = Vector3.zero;

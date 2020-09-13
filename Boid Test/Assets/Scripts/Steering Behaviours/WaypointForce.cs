@@ -9,7 +9,6 @@ public class WaypointForce : SteeringBehaviour
     public float waypointDistance;
     public int waypointIndex;
     public bool isGlobalWaypointEnabled;
-    //public bool enableWaypoints;
 
     // Start is called before the first frame update
     void Start()

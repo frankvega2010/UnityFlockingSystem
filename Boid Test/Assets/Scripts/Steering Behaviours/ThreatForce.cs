@@ -7,12 +7,6 @@ public class ThreatForce : SteeringBehaviour
     public float perceptionRadius;
     public float maxSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public override Vector3 GetSteer(List<Boid> boids, List<GameObject> foods, Boid currentBoid)
     {
         if(!currentBoid.isThreat)

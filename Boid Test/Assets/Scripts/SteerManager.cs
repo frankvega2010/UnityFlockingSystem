@@ -7,9 +7,6 @@ public class SteerManager : MonoBehaviour
     public GameObject steerBehavioursParent;
     public FoodSpawner foodSpawner;
     public SteeringBehaviour[] steerBehaviours;
-    /*public GameObject[] waypoints;
-    public int waypointIndex;
-    public bool enableWaypoints;*/
 
     private Vector3[] behavioursVector;
 
@@ -23,9 +20,7 @@ public class SteerManager : MonoBehaviour
         for (int i = 0; i < steerBehaviours.Length; i++)
         {
             steerBehaviours[i] = steerBehavioursParent.transform.GetChild(i).GetComponent<SteeringBehaviour>();
-            //behavioursToUse[i] = steerBehavioursParent.transform.GetChild(i).GetComponent<SteeringBehaviour>();
         }
-        //waypointIndex = 0;
     }
 
     public Vector3 SumForces(Boid currentBoid, List<Boid> boids)
@@ -48,27 +43,7 @@ public class SteerManager : MonoBehaviour
                 allForces += behavioursVector[c] * steerBehaviours[c].weight * Time.deltaTime;
             }
 
-        }
-
-       /* if(enableWaypoints)
-        {
-            Vector3 desiredPosition = waypoints[waypointIndex].transform.position - currentBoid.transform.position;
-
-            Vector3 distance = (desiredPosition.normalized * currentBoid.speed) - currentBoid.velocity;
-
-            allForces += distance;
-
-            if (Vector3.Distance(currentBoid.transform.position, waypoints[waypointIndex].transform.position) < 10.0f)
-            {
-                waypointIndex++;
-                if (waypointIndex >= waypoints.Length)
-                {
-                    waypointIndex = 0;
-                }
-            }
-        }*/
-
-        
+        }  
 
         return allForces;
     }

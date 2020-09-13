@@ -5,9 +5,6 @@ using UnityEngine.UIElements;
 
 public class Boid : MonoBehaviour
 {
-    
-
-    //public SteerManager steerManager;
     public Vector3 velocity;
     public float speed;
     public float minSpeed;
@@ -22,8 +19,6 @@ public class Boid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // perceptionRadius = 40;
-        // separationPerceptionRadius = 25;
         float angle = Random.Range(0, (2 * 3.1416f));
         speed = Random.Range(minSpeed, maxSpeed);
         velocity = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle),1) * speed;
@@ -31,13 +26,6 @@ public class Boid : MonoBehaviour
         {
             transform.position = new Vector3(Random.Range(0, 40), Random.Range(0, 40), Random.Range(0, 40));
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Vector3 separationForce = GetSeparationForce
         
     }
 

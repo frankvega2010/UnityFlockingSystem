@@ -4,14 +4,8 @@ using UnityEngine;
 
 public class AlignForce : SteeringBehaviour
 {
-    
     public float perceptionRadius;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public override Vector3 GetSteer(List<Boid> boids, List<GameObject> foods, Boid currentBoid)
     {
 

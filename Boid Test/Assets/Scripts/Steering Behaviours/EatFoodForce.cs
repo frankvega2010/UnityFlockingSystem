@@ -12,18 +12,6 @@ public class EatFoodForce : SteeringBehaviour
     public float eatDistance;
     public int maxFoodEaten;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    /*// Update is called once per frame
-    void Update()
-    {
-        
-    }*/
-
     public override Vector3 GetSteer(List<Boid> boids, List<GameObject> foods, Boid currentBoid)
     {
         if(!currentBoid.isThreat)
@@ -49,30 +37,20 @@ public class EatFoodForce : SteeringBehaviour
                         currentBoid.foodEaten++;
                         if(currentBoid.foodEaten >= maxFoodEaten)
                         {
-                            Debug.Log("there is a new threat now!");
+                            //Debug.Log("there is a new threat now!");
                             if (OnBoidEatenFood != null)
                             {
                                 OnBoidEatenFood(currentBoid);
                             }
                         }
 
-                        Debug.Log("food eaten");
+                        //Debug.Log("food eaten");
                     }
 
                     return distance;
 
-                    //waypointForce = distance;
                 }
             }
-
-            /*if (countNeighbour > 0)
-            {
-                return threatForce;
-            }
-            else
-            {
-                return Vector3.zero;
-            }*/
             return Vector3.zero;
         }
         else
