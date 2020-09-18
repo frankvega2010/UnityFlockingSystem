@@ -47,6 +47,10 @@ public class CameraChanger : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
+            SetCamera(7);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+        {
             SetCameraRandomBoid();
         }
     }
